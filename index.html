@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+	   <meta name="description" content="La excelencia académica y un número reducido de alumnos por clases garantizan la cercanía y el seguimiento personal del alumno para alcanzar los objetivos académicos, profesionales y personales." />
+      <title>Grados, Másteres y Cursos</title>
+      <!-- Bootstrap -->
+      <link href="css/bootstrap.css" rel="stylesheet">
+      <link rel="stylesheet" href="css/bootstrap-select.min.css">
+ 
+       <!-- Selector predictivo select2 -->
+      <link href="select2-combo-predictivo/select2.css" rel="stylesheet">
+      <link href="select2-combo-predictivo/custom-select2.css" rel="stylesheet">
+
+
+      <link rel="stylesheet" type="text/css" href="http://www.nebrija.com/lp/2017/descuento-big.css">    
+      <link rel="stylesheet" type="text/css" href="http://www.nebrija.com/lp/2017/form-header.css">
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <link rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)" href="css/style-med2.css" /> 
+      <link rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)" href="css/style-med.css" />
+      <link rel="stylesheet" media="screen and (max-width: 767px)" href="css/style-min.css" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+      <link href="skins/all.css?v=1.0.2" rel="stylesheet">
+      <link rel="stylesheet" href="css/font-awesome.min.css">
+      <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-touch-icon-57x57.png">
+      <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-touch-icon-60x60.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-touch-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-touch-icon-76x76.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-touch-icon-114x114.png">
+      <link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-touch-icon-120x120.png">
+      <link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-touch-icon-144x144.png">
+      <link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-touch-icon-152x152.png">
+      <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon-180x180.png">
+      <link rel="icon" type="image/png" href="favicons/favicon-32x32.png" sizes="32x32">
+      <link rel="icon" type="image/png" href="favicons/android-chrome-192x192.png" sizes="192x192">
+      <link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96">
+      <link rel="icon" type="image/png" href="favicons/favicon-16x16.png" sizes="16x16">
+      <link rel="manifest" href="favicons/manifest.json">
+      <link rel="mask-icon" href="favicons/safari-pinned-tab.png" color="#5bbad5">
+      <meta name="msapplication-TileColor" content="#da532c">
+      <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+      <meta name="theme-color" content="#ffffff">
+      
+
+       <!-- Phone tracking -->
+    <script type="text/javascript">
+        (function(a, e, c, f, g, b, d) {
+            var h = {
+                ak: "966465712",
+                cl: "IWqgCITfu2UQsLHszAM"
+            };
+            a[c] = a[c] || function() {
+                (a[c].q = a[c].q || []).push(arguments)
+            };
+            a[f] || (a[f] = h.ak);
+            b = e.createElement(g);
+            b.async = 1;
+            b.src = "//www.gstatic.com/wcm/loader.js";
+            d = e.getElementsByTagName(g)[0];
+            d.parentNode.insertBefore(b, d);
+            a._googWcmGet = function(b, d, e) {
+                a[c](2, b, h, d, null, new Date, e)
+            }
+        })(window, document, "_googWcmImpl", "_googWcmAk", "script");
+    </script>
+
+      <!-- Phone tracking -->
+      <script type="text/javascript">
+         (function(a, e, c, f, g, b, d) {
+            var h = {
+                   ak: "966465712",
+                   cl: "IWqgCITfu2UQsLHszAM"
+               };
+               a[c] = a[c] || function() {
+                   (a[c].q = a[c].q || []).push(arguments)
+               };
+               a[f] || (a[f] = h.ak);
+               b = e.createElement(g);
+               b.async = 1;
+               b.src = "//www.gstatic.com/wcm/loader.js";
+               d = e.getElementsByTagName(g)[0];
+               d.parentNode.insertBefore(b, d);
+               a._googWcmGet = function(b, d, e) {
+                   a[c](2, b, h, d, null, new Date, e)
+               }
+         })(window, document, "_googWcmImpl", "_googWcmAk", "script");
+      </script>
+      
+      <script>
+ 	function makeFrame()
+    {
+        debugger;
+        ifrm = document.createElement("IFRAME");
+        ifrm.setAttribute("src", "http://crm-nebrija.com/procesa_solicitud.asp?");
+        //Campo Pais para enviar al CRM de Latam -> El valor es el código ISO que se almacena en el atributo 'cod_pais' del select "País" del formulario
+        //Campo Provincia para enviar al CRM de Latam -> El Valor es el campo IdProv_ADMON en BBDD dbtlmk_2, se almacena en el atributo 'cod_provincia' del select "Provincia" del formulario
+        sProv="";
+        if (($('#provincia option:selected').attr('cod_provincia')) && ($('#provincia option:selected').attr('cod_provincia') != "")){
+            sProv=$('#provincia option:selected').attr('cod_provincia');
+        }
+        var titulacion = getQueryVariable('titulacion');
+        var Cod_TipoFRM = getQueryVariable('Cod_TipoFRM');
+        if(Cod_TipoFRM == ''){
+            Cod_TipoFRM = document.getElementsByName("Cod_TipoFRM")[0].value;
+        }
+        if(titulacion == '' || titulacion == 'undefined' ){
+            titulacion = document.getElementsByName("titulacion")[0].value;
+            if(titulacion == ''){
+                titulacion=$('#at_combo_titulaciones option:selected')[0].value;
+            }
+        }
+        if(titulacion.indexOf("/") != -1){
+            var titulacion_split  = titulacion.split("/");
+            titulacion = titulacion_split[0];
+        }
+        ifrm.src = ifrm.src + 'nombre=' + document.getElementById('nombre').value+ '&e_mail='+ document.getElementById('email').value +'&PaisISO2=' + $('#pais option:selected').attr('cod_pais') +'&IDProvincia='+ sProv +'&telefono='+ document.getElementById('telefono').value +'&ClaveCurso=' +titulacion +'&Observaciones='+ document.getElementsByName('observaciones')[0].value +'&IDFormularioCRM='+ Cod_TipoFRM+'&IDCampania=20';
+        ifrm.style.frameBorder = "no";
+        ifrm.style.display = "none";
+        document.body.appendChild(ifrm);
+    }
+   
+
+
+
+
+ function getQueryVariable(variable) {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i=0; i < vars.length; i++ ) {
+            var pair = vars[i].split("="); 
+            if (pair[0] == variable) {
+                return pair[1];
+            }
+        }
+        return false;
+    }
+	
+	</script>
+   </head>
+
+   
+   <body>
+     <div id="myDiv"></div>
+
+   <script src="js/jquery-1.11.3.min.js"></script> 
+
+<!--<script src="http://dev.gobalo.es/nebrija_landings/lp/2017/inc/super-main.js"></script>-->
+<script src="http://www.nebrija.com/lp/2017/inc/super-main.js"></script>
+<noscript>
+  <iframe src="//www.googletagmanager.com/ns.html?id=GTM-PMHDC6" height="0" width="0" style="display:none;visibility:hidden">
+  </iframe>
+</noscript>
+
+<!--  Header -->
+      <div class="container header">
+         <div class="col-md-4 col-sm-6 col-xs-12 logo"> <img src="img/logo_nebrija.png" alt="Logo Nebrija"> </div>
+         <div class="col-md-4 col-sm-6 col-xs-12 telefono pull-right" id="div_phone" style="display: none;"> Llámanos<br />
+            <a href="#" class="red_text g_telefono" id="at_phone"></a> 
+         </div>
+      </div>
+      <!--  Fin Header --> 
+      <!--  Img y Form -->
+<div class="header_form ">
+      <div class="header_form_content container">
+<div class="row">
+	<div class="col-md-12 destacado_header">
+	<p>¡Últimos días para conseguir el 15% de descuento!*</p>
+	<a href="#form_ancla" id="scroll-button" class="boton_form_header"> ¡Infórmate ya! </a>
+	</div>
+	</div>
+</div>
+</div>
+      <div class="container-fluid ">
+        <div class="img_header">
+         <div class="container ">
+           
+       <div class="nombre_titulacion container">
+        <div class="col-md-8   col-lg-8 col-sm-7">
+          
+          <h1> Grados, Másteres y Cursos <br>
+                     
+          </h1>
+         
+          <!--<h3 class="visible-xs online">Programas 100% online y semipresenciales </h3>-->
+          <h2 class="visible-xs">El Contrato Nebrija – Universidad, Empresas y tú, unidos para convertirte en el profesional mejor preparado.</h2>
+          <div class="partners">
+          <div class="row">
+         <!-- <div class="col-sm-4 col-lg-3 partner">
+          <img class="img-responseve logo_partner hidden-xs"  alt="logo del partner" src="img/iaa.jpg" />
+          <img class="img-responseve logo_partner visible-xs hidden-sm hidden-md hidden-lg"  alt="logo del partner" src="img/iaa.jpg" />
+          </div>-->
+          <!--<div class="col-sm-3 col-lg-3 col-lg-offset-1 col-sm-offset-1">
+          <img class="img-responseve logo_partner hidden-xs"  alt="logo del partner" src="img/canal_plusOk.png" />
+          <img class="img-responseve logo_partner visible-xs hidden-sm hidden-md hidden-lg"  alt="logo del partner" src="img/canal_plus2.png" />
+          </div>-->
+          </div>
+          
+          
+          </div>
+               </div>
+       </div>
+               <a name="form_ancla"></a>
+   <div class="formulario red_bg col-md-4 col-sm-5 col-xs-12">
+
+                  <h2 class="h2-descuento-big">¡CONSIGUE UN 15% DE DESCUENTO!<span class="asterisco-titu">**</span></h2>
+                  <p>Rellena el formulario<br>
+                     para obtener más información. 
+                  </p>
+                  <!-- *************************** Formulario ************************-->
+                  <form method="post" id="formInsert" name="formInsert" onsubmit="return checkForm(this);" action="https://www.nebrija.es/admisiones/solicitudes/formToDBPrecandidatos.php">
+                     <!--  Nebrija inputs -->
+                    <input type="hidden" name="Cod_TipoFRM" id="at_canal" value="">
+                    <input type="hidden" name="titulacion" id="at_titulacion" value="">
+                    <input type="hidden" name="redirect" id="at_retorno" value="">
+                    <!-- ---------------- -->
+                     <input type="text" class="input_style" id="nombre" name="nombre" placeholder="*Nombre y Apellidos">
+                     <input type="email" class="input_style" id="email" name="email" placeholder="*Email de contacto">
+                     <select class="selectpicker_pais" name="pais" id="pais" size="1" placeholder="*Pa&iacute;s">
+                        <option value="pais" id="first_option_pais">*País</option>
+                        <option value="" disabled>---</option>
+                        <option value="25"  cod_pais="ES" selPrefijo="+34" selProvincia="S">ESPAÑA</option>
+                        <option value="18"  cod_pais="CO" selPrefijo="+57" >COLOMBIA</option>
+                        <option value="10"  cod_pais="IT" selPrefijo="+39">ITALIA</option>
+                        <option value="50"  cod_pais="US" selPrefijo="+1">ESTADOS UNIDOS</option>
+                        <option value="49"  cod_pais="MX" selPrefijo="+52">MÉXICO</option>
+                        <option value="41"  cod_pais="NI" selPrefijo="+505">NICARAGUA</option>
+                        <option value="44"  cod_pais="PE" selPrefijo="+51">PERÚ</option>
+                        <option value="51"  cod_pais="DO" selPrefijo="+1">REPÚBLICA DOMINICANA</option>
+                        <option value="119" cod_pais="SV" selPrefijo="+503">EL SALVADOR</option>
+                        <option value="46"  cod_pais="VE" selPrefijo="+58">VENEZUELA</option>
+                        <option value="" disabled>---</option>
+                        <option value="120" cod_pais="AF" selPrefijo="+93">AFGANISTÁN</option>
+                        <option value="100" cod_pais="AL" selPrefijo="+355">ALBANIA</option>
+                        <option value="2"   cod_pais="DE" selPrefijo="+49">ALEMANIA</option>
+                        <option value="21"  cod_pais="AD" selPrefijo="+376">ANDORRA</option>
+                        <option value="117" cod_pais="AO" selPrefijo="+244">ANGOLA</option>
+                        <option value="134" cod_pais="AI" selPrefijo="+1">ANGUILA</option>
+                        <option value="135" cod_pais="AQ" selPrefijo="+672">ANTÁRTIDA</option>
+                        <option value="136" cod_pais="AG" selPrefijo="+1">ANTIGUA Y BARBUDA</option>
+                        <option value="137" cod_pais="AN" selPrefijo="+599">ANTILLAS HOLANDESAS</option>
+                        <option value="138" cod_pais="SA" selPrefijo="+966">ARABIA SAUDÍ</option>
+                        <option value="3"   cod_pais="DZ" selPrefijo="+213">ARGELIA</option>
+                        <option value="1"   cod_pais="AR" selPrefijo="+54">ARGENTINA</option>
+                        <option value="81"  cod_pais="AM" selPrefijo="+374">ARMENIA</option>
+                        <option value="139" cod_pais="AW" selPrefijo="+297">ARUBA</option>
+                        <option value="77"  cod_pais="AU" selPrefijo="+61">AUSTRALIA</option>
+                        <option value="22"  cod_pais="AT" selPrefijo="+43">AUSTRIA</option>
+                        <option value="95"  cod_pais="AZ" selPrefijo="+994">AZERBAIYÁN</option>
+                        <option value="140" cod_pais="BS" selPrefijo="+1">BAHAMAS</option>
+                        <option value="141" cod_pais="BH" selPrefijo="+973">BAHREIN</option>
+                        <option value="80"  cod_pais="BD" selPrefijo="+880">BANGLADESH</option>
+                        <option value="121" cod_pais="BB" selPrefijo="+1">BARBADOS</option>
+                        <option value="4"   cod_pais="BE" selPrefijo="+32">BÉLGICA</option>
+                        <option value="142" cod_pais="BZ" selPrefijo="+501">BELICE</option>
+                        <option value="143" cod_pais="BM" selPrefijo="+229">BENIN</option>
+                        <option value="144" cod_pais="BM" selPrefijo="+1">BERMUDA</option>
+                        <option value="145" cod_pais="BY" selPrefijo="+375">BIELORRUSIA</option>
+                        <option value="36"  cod_pais="BO" selPrefijo="+591">BOLIVIA</option>
+                        <option value="79"  cod_pais="BA" selPrefijo="+387">BOSNIA</option>
+                        <option value="267" cod_pais="BW" selPrefijo="+387">BOTSWANA</option>
+                        <option value="17"  cod_pais="BR" selPrefijo="+55">BRASIL</option>
+                        <option value="147" cod_pais="BN" selPrefijo="+673">BRUNEI</option>
+                        <option value="23"  cod_pais="BG" selPrefijo="+359">BULGARIA</option>
+                        <option value="148" cod_pais="BF" selPrefijo="+226">BURKINA FASO</option>
+                        <option value="83"  cod_pais="BI" selPrefijo="+257">BURUNDI</option>
+                        <option value="149" cod_pais="BT" selPrefijo="+975">BUTAN</option>
+                        <option value="105" cod_pais="CV" selPrefijo="+238">CABO VERDE</option>
+                        <option value="150" cod_pais="KH" selPrefijo="+855">CAMBOYA</option>
+                        <option value="130" cod_pais="CM" selPrefijo="+237">CAMERÚN</option>
+                        <option value="52"  cod_pais="CA" selPrefijo="+1">CANADÁ</option>
+                        <option value="151" cod_pais="TD" selPrefijo="+235">CHAD</option>
+                        <option value="37"  cod_pais="CL" selPrefijo="+56">CHILE</option>
+                        <option value="53"  cod_pais="CN" selPrefijo="+86">CHINA</option>
+                        <option value="24"  cod_pais="CY" selPrefijo="+357">CHIPRE</option>
+                        <option value="152" cod_pais="VA" selPrefijo="+379">CIUDAD DEL VATICANO</option>
+                        <option value="153" cod_pais="CG" selPrefijo="+242">CONGO</option>
+                        <option value="94"  cod_pais="CD" selPrefijo="+243">CONGO (REPUBLICA DEMOCRATICA)</option>
+                        <option value="118" cod_pais="KP" selPrefijo="+850">COREA DEL NORTE</option>
+                        <option value="69"  cod_pais="KR" selPrefijo="+82">COREA DEL SUR</option>
+                        <option value="154" cod_pais="CI" selPrefijo="+225">COSTA DE MARFIL</option>
+                        <option value="38"  cod_pais="CR" selPrefijo="+506">COSTA RICA</option>
+                        <option value="90"  cod_pais="HR" selPrefijo="+385">CROACIA</option>
+                        <option value="47"  cod_pais="CU" selPrefijo="+53">CUBA</option>
+                        <option value="6"   cod_pais="DK" selPrefijo="+45">DINAMARCA</option>
+                        <option value="155" cod_pais="DM" selPrefijo="+1">DOMINICA</option>
+                        <option value="19"  cod_pais="EC" selPrefijo="+593">ECUADOR</option>
+                        <option value="60"  cod_pais="EG" selPrefijo="+20">EGIPTO</option>
+                        <option value="125" cod_pais="AE" selPrefijo="+971">EMIRATOS ARABES UNIDOS</option>
+                        <option value="156" cod_pais="ER" selPrefijo="+291">ERITREA</option>
+                        <option value="64"  cod_pais="SK" selPrefijo="+421">ESLOVAQUIA</option>
+                        <option value="107" cod_pais="SI" selPrefijo="+386">ESLOVENIA</option>
+                        <option value="99"  cod_pais="EE" selPrefijo="+372">ESTONIA</option>
+                        <option value="157" cod_pais="ET" selPrefijo="+251">ETIPOÍA</option>
+                        <option value="56"  cod_pais="PH" selPrefijo="+63">FILIPINAS</option>
+                        <option value="7"   cod_pais="FI" selPrefijo="+358">FINLANDIA</option>
+                        <option value="176" cod_pais="FJ" selPrefijo="+679">FIYI</option>
+                        <option value="26"  cod_pais="FR" selPrefijo="+33">FRANCIA</option>
+                        <option value="158" cod_pais="GA" selPrefijo="+241">GABÓN</option>
+                        <option value="159" cod_pais="GM" selPrefijo="+220">GAMBIA</option>
+                        <option value="102" cod_pais="GE" selPrefijo="+995">GEORGIA</option>
+                        <option value="160" cod_pais="GS" selPrefijo="+500">GEORGIA DEL SUR E ISLAS SANDWICH</option>
+                        <option value="63"  cod_pais="GH" selPrefijo="+233">GHANA</option>
+                        <option value="161" cod_pais="GI" selPrefijo="+350">GIBRALTAR</option>
+                        <option value="162" cod_pais="GD" selPrefijo="+1">GRANADA</option>
+                        <option value="8"   cod_pais="GR" selPrefijo="+30">GRECIA</option>
+                        <option value="163" cod_pais="GL" selPrefijo="+299">GROENLANDIA</option>
+                        <option value="164" cod_pais="GP" selPrefijo="+590">GUADALUPE</option>
+                        <option value="165" cod_pais="GU" selPrefijo="+1">GUAM</option>
+                        <option value="39"  cod_pais="GT" selPrefijo="+502">GUATEMALA</option>
+                        <option value="168" cod_pais="GN" selPrefijo="+224">GUINEA</option>
+                        <option value="131" cod_pais="GW" selPrefijo="+245">GUINEA BISSAU</option>
+                        <option value="54"  cod_pais="GQ" selPrefijo="+240">GUINEA ECUATORIAL</option>
+                        <option value="166" cod_pais="GY" selPrefijo="+592">GUYANA</option>
+                        <option value="167" cod_pais="GF" selPrefijo="+594">GUYANA FRANCESA</option>
+                        <option value="106" cod_pais="HT" selPrefijo="+509">HAITI</option>
+                        <option value="27"  cod_pais="NL" selPrefijo="+31">HOLANDA</option>
+                        <option value="40"  cod_pais="HN" selPrefijo="+504">HONDURAS</option>
+                        <option value="123" cod_pais="HK" selPrefijo="+852">HONG KONG</option>
+                        <option value="20"  cod_pais="HU" selPrefijo="+36">HUNGRIA</option>
+                        <option value="76"  cod_pais="IN" selPrefijo="+91">INDIA</option>
+                        <option value="74"  cod_pais="ID" selPrefijo="+62">INDONESIA</option>
+                        <option value="112" cod_pais="IQ" selPrefijo="+964">IRAK</option>
+                        <option value="67"  cod_pais="IN" selPrefijo="+98">IRÁN</option>
+                        <option value="28"  cod_pais="IE" selPrefijo="+353">IRLANDA</option>
+                        <option value="169" cod_pais="BV" selPrefijo="+47">ISLA BOUVET</option>
+                        <option value="250" cod_pais="IM" selPrefijo="+44">ISLA DE MAN</option>
+                        <option value="170" cod_pais="CX" selPrefijo="+61">ISLA DE NAVIDAD</option>
+                        <option value="132" cod_pais="IS" selPrefijo="+354">ISLANDIA</option>
+                        <option value="171" cod_pais="KY" selPrefijo="+1">ISLAS CAIMAN</option>
+                        <option value="172" cod_pais="CC" selPrefijo="+891">ISLAS COCOS </option>
+                        <option value="173" cod_pais="KM" selPrefijo="+269">ISLAS COMORAS</option>
+                        <option value="174" cod_pais="CK" selPrefijo="+682">ISLAS COOK</option>
+                        <option value="175" cod_pais="FO" selPrefijo="+298">ISLAS FEROE</option>
+                        <option value="177" cod_pais="HM" selPrefijo="+0">ISLAS HEARD Y MCDONALD</option>
+                        <option value="126" cod_pais="FK" selPrefijo="+500">ISLAS MALVINAS</option>
+                        <option value="178" cod_pais="MP" selPrefijo="+1">ISLAS MARIANAS DEL NORTE</option>
+                        <option value="179" cod_pais="MH" selPrefijo="+692">ISLAS MARSHALL</option>
+                        <option value="180" cod_pais="PN" selPrefijo="+64">ISLAS PITCAIRN</option>
+                        <option value="181" cod_pais="SB" selPrefijo="+677">ISLAS SALOMON</option>
+                        <option value="182" cod_pais="TC" selPrefijo="+1">ISLAS TURCAS Y CAICOS</option>
+                        <option value="183" cod_pais="VG" selPrefijo="+1">ISLAS VÍRGENES BRITÁNICAS</option>
+                        <option value="184" cod_pais="VI" selPrefijo="+1">ISLAS VÍRGENES DE ESTADOS UNIDOS</option>
+                        <option value="62"  cod_pais="IL" selPrefijo="+972">ISRAEL</option>
+                        <option value="185" cod_pais="JM" selPrefijo="+1">JAMAICA</option>
+                        <option value="57"  cod_pais="JP" selPrefijo="+81">JAPON</option>
+                        <option value="251" cod_pais="JE" selPrefijo="+44">JERSEY</option>
+                        <option value="68"  cod_pais="JO" selPrefijo="+962">JORDANIA</option>
+                        <option value="70"  cod_pais="KZ" selPrefijo="+7">KAZAJSTAN</option>
+                        <option value="109" cod_pais="KE" selPrefijo="+254">KENIA</option>
+                        <option value="186" cod_pais="KI" selPrefijo="+686">KIRIBATI</option>
+                        <option value="82"  cod_pais="KG" selPrefijo="+996">KIRGUIZISTÁN</option>
+                        <option value="187" cod_pais="KW" selPrefijo="+965">KUWAIT</option>
+                        <option value="91"  cod_pais="LA" selPrefijo="+856">LAOS</option>
+                        <option value="189" cod_pais="LV" selPrefijo="+371">LETONIA</option>
+                        <option value="73"  cod_pais="LB" selPrefijo="+961">LÍBANO</option>
+                        <option value="71"  cod_pais="LR" selPrefijo="+231">LIBERIA</option>
+                        <option value="110" cod_pais="LY" selPrefijo="+218">LIBIA</option>
+                        <option value="190" cod_pais="LI" selPrefijo="+423">LIECHTENSTEIN</option>
+                        <option value="55"  cod_pais="LT" selPrefijo="+370">LITUANIA</option>
+                        <option value="29"  cod_pais="LU" selPrefijo="+352">LUXEMBURGO</option>
+                        <option value="252" cod_pais="MO" selPrefijo="+853">MACAO</option>
+                        <option value="127" cod_pais="MK" selPrefijo="+389">MACEDONIA</option>
+                        <option value="191" cod_pais="MG" selPrefijo="+261">MADAGASCAR</option>
+                        <option value="103" cod_pais="MY" selPrefijo="+60">MALASIA</option>
+                        <option value="192" cod_pais="MW" selPrefijo="+265">MALAUI</option>
+                        <option value="193" cod_pais="MV" selPrefijo="+960">MALDIVAS</option>
+                        <option value="194" cod_pais="ML" selPrefijo="+223">MALI</option>
+                        <option value="108" cod_pais="MT" selPrefijo="+356">MALTA</option>
+                        <option value="11"  cod_pais="MA" selPrefijo="+212">MARRUECOS</option>
+                        <option value="195" cod_pais="MQ" selPrefijo="+596">MARTINICA</option>
+                        <option value="128" cod_pais="MR" selPrefijo="+222">MAURITANIA</option>
+                        <option value="196" cod_pais="YT" selPrefijo="+262">MAYOTTE</option>
+                        <option value="197" cod_pais="FM" selPrefijo="+691">MICRONESIA</option>
+                        <option value="198" cod_pais="MD" selPrefijo="+373">MOLDAVIA</option>
+                        <option value="199" cod_pais="MC" selPrefijo="+377">MONACO</option>
+                        <option value="200" cod_pais="MN" selPrefijo="+976">MONGOLIA</option>
+                        <option value="124" cod_pais="ME" selPrefijo="+382">MONTENEGRO</option>
+                        <option value="201" cod_pais="MS" selPrefijo="+1">MONTSERRAT</option>
+                        <option value="104" cod_pais="MZ" selPrefijo="+258">MOZAMBIQUE</option>
+                        <option value="202" cod_pais="MM" selPrefijo="+95">MYANMAR</option>
+                        <option value="203" cod_pais="NA" selPrefijo="+264">NAMIBIA</option>
+                        <option value="204" cod_pais="NR" selPrefijo="+674">NAURU</option>
+                        <option value="96"  cod_pais="NP" selPrefijo="+977">NEPAL</option>
+                        <option value="205" cod_pais="NE" selPrefijo="+227">NIGER</option>
+                        <option value="75"  cod_pais="NG" selPrefijo="+234">NIGERIA</option>
+                        <option value="206" cod_pais="NU" selPrefijo="+683">NIUE</option>
+                        <option value="207" cod_pais="NF" selPrefijo="+672">NORFOLK ISLAND</option>
+                        <option value="30"  cod_pais="NO" selPrefijo="+47">NORUEGA</option>
+                        <option value="208" cod_pais="NC" selPrefijo="+687">NUEVA CALEDONIA</option>
+                        <option value="209" cod_pais="NZ" selPrefijo="+64">NUEVA ZELANDA</option>
+                        <option value="210" cod_pais="OM" selPrefijo="+968">OMAN</option>
+                        <option value="97"  cod_pais="PK" selPrefijo="+92">PAKISTAN</option>
+                        <option value="211" cod_pais="PW" selPrefijo="+680">PALAOS</option>
+                        <option value="65"  cod_pais="PS" selPrefijo="+970">PALESTINA</option>
+                        <option value="42"  cod_pais="PA" selPrefijo="+507">PANAMA</option>
+                        <option value="212" cod_pais="PG" selPrefijo="+675">PAPUA NUEVA GUINEA</option>
+                        <option value="43"  cod_pais="PY" selPrefijo="+595">PARAGUAY</option>
+                        <option value="213" cod_pais="PF" selPrefijo="+689">POLINESIA FRANCESA</option>
+                        <option value="12"  cod_pais="PL" selPrefijo="+48">POLONIA</option>
+                        <option value="31"  cod_pais="PT" selPrefijo="+351">PORTUGAL</option>
+                        <option value="92"  cod_pais="PR" selPrefijo="+1">PUERTO RICO</option>
+                        <option value="214" cod_pais="QA" selPrefijo="+974">QATAR</option>
+                        <option value="13"  cod_pais="GB" selPrefijo="+44">REINO UNIDO</option>
+                        <option value="133" cod_pais="CF" selPrefijo="+236">REPÚBLICA CENTROAFRICANA</option>
+                        <option value="5"   cod_pais="CZ" selPrefijo="+420">REPÚBLICA CHECA</option>
+                        <option value="66"  cod_pais="MU" selPrefijo="+230">REPÚBLICA DE MAURICIO</option>
+                        <option value="215" cod_pais="RE" selPrefijo="+262">REUNIÓN</option>
+                        <option value="216" cod_pais="RW" selPrefijo="+250">RUANDA</option>
+                        <option value="32"  cod_pais="RO" selPrefijo="+40">RUMANÍA</option>
+                        <option value="16"  cod_pais="RU" selPrefijo="+7">RUSIA</option>
+                        <option value="217" cod_pais="EH" selPrefijo="+212">SÁHARA OCCIDENTAL</option>
+                        <option value="219" cod_pais="WS" selPrefijo="+685">SAMOA</option>
+                        <option value="220" cod_pais="AS" selPrefijo="+1">SAMOA AMERICANA </option>
+                        <option value="218" cod_pais="KN" selPrefijo="+1">SAN CRISTOBAL Y NIEVES</option>
+                        <option value="221" cod_pais="SM" selPrefijo="+378">SAN MARINO </option>
+                        <option value="253" cod_pais="PM" selPrefijo="+508">SAN PEDRO Y MIQUELON</option>
+                        <option value="222" cod_pais="VC" selPrefijo="+1">SAN VICENTE Y LAS GRANADINAS</option>
+                        <option value="223" cod_pais="SH" selPrefijo="+290">SANTA ELENA, ASCENSIÓN Y TRISTAN DE ACUÑA </option>
+                        <option value="224" cod_pais="LC" selPrefijo="+1">SANTA LUCÍA </option>
+                        <option value="225" cod_pais="ST" selPrefijo="+239">SANTO TOMÉ Y PRÍNCIPE </option>
+                        <option value="59"  cod_pais="SN" selPrefijo="+221">SENEGAL</option>
+                        <option value="78"  cod_pais="RS" selPrefijo="+381">SERBIA</option>
+                        <option value="226" cod_pais="SC" selPrefijo="+248">SEYCHELLES</option>
+                        <option value="227" cod_pais="SL" selPrefijo="+232">SIERRA LEONA</option>
+                        <option value="228" cod_pais="SG" selPrefijo="+65">SINGAPUR</option>
+                        <option value="122" cod_pais="SY" selPrefijo="+963">SIRIA</option>
+                        <option value="229" cod_pais="SO" selPrefijo="+252">SOMALIA</option>
+                        <option value="84"  cod_pais="LK" selPrefijo="+94">SRI LANKA</option>
+                        <option value="101" cod_pais="ZA" selPrefijo="+27">SUDAFRICA</option>
+                        <option value="14"  cod_pais="SE" selPrefijo="+46">SUECIA</option>
+                        <option value="33"  cod_pais="CH" selPrefijo="+41">SUIZA</option>
+                        <option value="232" cod_pais="SR" selPrefijo="+597">SURINAM</option>
+                        <option value="233" cod_pais="SJ" selPrefijo="+47">SVALBARD Y JAN MAYEN </option>
+                        <option value="89"  cod_pais="TW" selPrefijo="+886">TAIWÁN </option>
+                        <option value="234" cod_pais="TZ" selPrefijo="+255">TANZANIA</option>
+                        <option value="235" cod_pais="TJ" selPrefijo="+992">TAYIKISTÁN</option>
+                        <option value="236" cod_pais="IO" selPrefijo="+246">TERRITORIO BRITÁNICO DEL OCÉANO ÍNDICO </option>
+                        <option value="58"  cod_pais="TH" selPrefijo="+66">THAILANDIA</option>
+                        <option value="237" cod_pais="TF" selPrefijo="+262">TIERRAS AUSTRALES Y ANTÁRTICAS FRANCESAS </option>
+                        <option value="254" cod_pais="TL" selPrefijo="+670">TIMOR ORIENTAL</option>
+                        <option value="238" cod_pais="TG" selPrefijo="+228">TOGO</option>
+                        <option value="239" cod_pais="TK" selPrefijo="+690">TOKELAU</option>
+                        <option value="240" cod_pais="TO" selPrefijo="+676">TONGA</option>
+                        <option value="93"  cod_pais="TT" selPrefijo="+1">TRINIDAD Y TOBAGO</option>
+                        <option value="15"  cod_pais="TN" selPrefijo="+216">TÚNEZ</option>
+                        <option value="241" cod_pais="TM" selPrefijo="+993">TURKMENISTÁN</option>
+                        <option value="34"  cod_pais="TR" selPrefijo="+90">TURQUÍA</option>
+                        <option value="242" cod_pais="TV" selPrefijo="+688">TUVALU</option>
+                        <option value="61"  cod_pais="UA" selPrefijo="+380">UCRANIA</option>
+                        <option value="243" cod_pais="UG" selPrefijo="+256">UGANDA</option>
+                        <option value="45"  cod_pais="UY" selPrefijo="+598">URUGUAY</option>
+                        <option value="244" cod_pais="UZ" selPrefijo="+998">UZBEKISTAN</option>
+                        <option value="245" cod_pais="VU" selPrefijo="+678">VANUATU</option>
+                        <option value="72"  cod_pais="VN" selPrefijo="+84">VIETNAM</option>
+                        <option value="246" cod_pais="WF" selPrefijo="+681">WALLIS Y FUTUNA</option>
+                        <option value="247" cod_pais="YE" selPrefijo="+967">YEMEN</option>
+                        <option value="248" cod_pais="DJ" selPrefijo="+253">YIBUTI</option>
+                        <option value="113" cod_pais="ZM" selPrefijo="+260">ZAMBIA</option>
+                        <option value="249" cod_pais="ZW" selPrefijo="+263">ZIMBABUE</option>
+                        <option value="0"  cod_pais="XX" selPrefijo="+">OTRO</option>
+                     </select>
+                     <select class="selectpicker_provincia" id="provincia" name="provincia" size="1" placeholder="*Provincia">
+                        <option value="">*Provincia</option>
+                        <option value="2" cod_provincia="1">ÁLAVA</option>
+                                <option value="3" cod_provincia="2">ALBACETE</option>
+                                <option value="4" cod_provincia="3">ALICANTE</option>
+                                <option value="5" cod_provincia="4">ALMERÍA</option>
+                                <option value="34" cod_provincia="33">ASTURIAS</option>
+                                <option value="6" cod_provincia="5">ÁVILA</option>
+                                <option value="7" cod_provincia="6">BADAJOZ</option>
+                                <option value="8" cod_provincia="7">BALEARES</option>
+                                <option value="9" cod_provincia="8">BARCELONA</option>
+                                <option value="10" cod_provincia="9">BURGOS</option>
+                                <option value="11" cod_provincia="10">CÁCERES</option>
+                                <option value="12" cod_provincia="11">CÁDIZ</option>
+                                <option value="40" cod_provincia="39">CANTABRIA</option>
+                                <option value="13" cod_provincia="12">CASTELLÓN</option>
+                                <option value="52" cod_provincia="51">CEUTA</option>
+                                <option value="14" cod_provincia="13">CIUDAD REAL</option>
+                                <option value="15" cod_provincia="14">CÓRDOBA</option>
+                                <option value="17" cod_provincia="16">CUENCA</option>
+                                <option value="18" cod_provincia="17">GERONA</option>
+                                <option value="19" cod_provincia="18">GRANADA</option>
+                                <option value="20" cod_provincia="19">GUADALAJARA</option>
+                                <option value="21" cod_provincia="20">GUIPÚZCOA</option>
+                                <option value="22" cod_provincia="21">HUELVA</option>
+                                <option value="23" cod_provincia="22">HUESCA</option>
+                                <option value="24" cod_provincia="23">JAÉN</option>
+                                <option value="16" cod_provincia="15">LA CORUÑA</option>
+                                <option value="27" cod_provincia="26">LA RIOJA</option>
+                                <option value="36" cod_provincia="35">LAS PALMAS</option>
+                                <option value="25" cod_provincia="24">LEÓN</option>
+                                <option value="26" cod_provincia="25">LÉRIDA</option>
+                                <option value="28" cod_provincia="27">LUGO</option>
+                                <option value="29" cod_provincia="28">MADRID</option>
+                                <option value="30" cod_provincia="29">MÁLAGA</option>
+                                <option value="53" cod_provincia="52">MELILLA</option>
+                                <option value="31" cod_provincia="30">MURCIA</option>
+                                <option value="32" cod_provincia="31">NAVARRA</option>
+                                <option value="33" cod_provincia="32">ORENSE</option>
+                                <option value="35" cod_provincia="34">PALENCIA</option>
+                                <option value="37" cod_provincia="36">PONTEVEDRA</option>
+                                <option value="38" cod_provincia="37">SALAMANCA</option>
+                                <option value="39" cod_provincia="38">SANTA CRUZ DE TENERIFE</option>
+                                <option value="41" cod_provincia="40">SEGOVIA</option>
+                                <option value="42" cod_provincia="41">SEVILLA</option>
+                                <option value="43" cod_provincia="42">SORIA</option>
+                                <option value="44" cod_provincia="43">TARRAGONA</option>
+                                <option value="45" cod_provincia="44">TERUEL</option>
+                                <option value="46" cod_provincia="45">TOLEDO</option>
+                                <option value="47" cod_provincia="46">VALENCIA</option>
+                                <option value="48" cod_provincia="47">VALLADOLID</option>
+                                <option value="49" cod_provincia="48">VIZCAYA</option>
+                                <option value="50" cod_provincia="49">ZAMORA</option>
+                                <option value="51" cod_provincia="50">ZARAGOZA</option>
+                     </select>
+
+                     <input type="phone" class="input_style" id="telefono" name="telefono" placeholder="Fijo o móvil"/>
+
+                     
+
+                     <input type="text" class="input_style" id="at_titulacion_procedencia" name="titulacion_procedencia" placeholder="Titulación de procedencia" style="display: none;">
+
+                     <!--<select class="selectpicker_pais"  name="titulacion" id="at_combo_titulaciones" size="1" placeholder="Titulaciones">
+                        <option value=""> Combo de titulaciones</option>
+            </select>-->
+
+<!-- AQUÍ EMPIEZA EL COMBO PREDICTIVO -->
+
+                <select id="at_combo_titulaciones" class="js-example-basic-single form-control select2-hidden-accessible" name="titulacion" tabindex="-1" aria-hidden="true" style="width:100%">
+                  
+                 <option></option>
+
+                  <!-- GRADOS -->
+                  <optgroup label="GRADOS" class="opt-tipo">
+                    <!-- Facultad de Lenguas y Educación -->
+                <optgroup label="Facultad de Lenguas y Educación" class="opt-facultad">
+                    <option value="GALMP">Grado en Lenguas Modernas Inglés</option>
+                      <option value="GAINFP">Grado en Educación Infantil</option>
+                      <option value="GAPRIP">Grado en Educación Primaria</option>
+                      <!--<option value="GAFISP">Grado en Ciencias de la Actividad Física y del Deporte</option>-->
+                      <option value="GALAP">Grado en Lingüística Aplicada y Ciencias del Lenguaje </option>
+                      <option value="GADPIN">Doble Grado en Educación Primaria + Educación Infantil</option>
+                      <option value="GADPLM">Doble Grado en Educación Primaria + Lenguas Modernas</option>
+                       <option value="GADFIP">Doble Grado en Ciencias de la Actividad Física y del Deportes + Educación Primaria</option>
+                       <option value="MPMAP">Máster en Mercado del Arte y Gestión de Empresas Relacionadas</option>
+                </optgroup>
+
+                 <!-- Facultad de Comunicación y Artes  -->
+                 <optgroup label="Facultad de Comunicación y Artes" class="opt-facultad">
+                    <option value="GCPERP">Grado en Periodismo</option>
+                    <option value="GCAUP">Grado en Comunicación Audiovisual</option>
+                      <option value="GCPUBP">Grado en Publicidad y Relaciones Públicas</option>
+                      <option value="GCMKP">Grado en Marketing</option>
+                      <option value="GCCPOP">Grado en Comunicación Corporativa, Protocolo y Organización de Eventos</option>
+                      <option value="GCAEP">Grado en Artes Escénicas</option>
+                      <option value="GCDMUP">Grado en Diseño Digital y Multimedia</option>
+                      <option value="GCMODP">Grado en Diseño de Moda</option>
+                      <option value="GCDPAU">Doble Grado en Periodismo + Comunicación Audiovisual</option>
+                      <option value="GCDPRI">Doble Grado en Periodismo + Relaciones Internacionales</option>
+                      <option value="GCDAP">Doble Grado en Comunicación Audiovisual + Publicidad y Relaciones Públicas</option>
+                      <option value="GCDPMK">Doble Grado en Publicidad y Relaciones Públicas + Marketing</option>
+                      <option value="GCDPCC">Doble Grado en Publicidad y Relaciones Públicas + Comunicación Corporativa, Protocolo y Organización de Eventos</option>
+                      <option value="GCDPUD">Doble Grado en Publicidad y Relaciones Públicas + Diseño Digital y Multimedia</option>
+                      <option value="GCDACA">Doble Grado en Artes Escénicas + Comunicación Audiovisual</option>
+                      <option value="GPDBAD">Doble Grado en Bellas Artes + Diseño de Interiores</option>
+                </optgroup>
+
+                 <!-- Facultad de Ciencias Sociales  -->
+                 <optgroup label="Facultad de Ciencias Sociales" class="opt-facultad">
+                    <option value="GSADEP">Grado en C- ADE - Creación, Administración y Dirección de Empresas</option>
+                    <option value="GSPSIP">Grado en Psicología</option>
+                    <option value="GSECOP">Grado en Economía y Negocios Internacionales</option>
+                    <option value="GSDERP">Grado en Derecho</option>
+                    <option value="GSRIP">Grado en Relaciones Internacionales</option>
+                    <option value="GSSEGP">Grado en Seguridad</option>
+                    <option value="GSTURP">Grado en Turismo</option>
+                    <option value="GSDARI">Doble Grado en C- ADE - Creación, Administración y Dirección de Empresas + Relaciones Internacionales</option>
+                    <option value="GSDAMK">Doble Grado en C- ADE - Creación, Administración y Dirección de Empresas + Marketing</option>
+                    <option value="GSDATU">Doble Grado en C- ADE - Creación, Administración y Dirección de Empresas + Turismo</option>
+                    <option value="GSDTMK">Doble Grado en Turismo + Marketing</option>
+                    <option value="GSDDRI">Doble Grado en Derecho + Relaciones Internacionales</option>
+                    <option value="GSDDAD">Doble Grado en Derecho + C- ADE- Creación, Administración y Dirección de Empresas</option>
+                    <option value="GSDDSE">Doble Grado en Derecho + Seguridad</option>
+                    <option value="GSDRIT">Doble Grado en Relaciones Internacionales + Turismo</option>
+                    <option value="GSDRIS">Doble Grado en Relaciones Internacionales + Seguridad</option>
+                    <option value="GSDRIC">Doble Grado en Relaciones Internacionales + Comunicación Corporativa, Protocolo y Organización de Eventos</option>
+
+                </optgroup>
+
+
+                <!-- Facultad de Ciencias Sociales  -->
+                 <optgroup label="Facultad de Ciencias Sociales" class="opt-facultad">
+                    <option value="GPINDP">Grado en Ingeniería en Tecnologías Industriales</option>
+                  <option value="GPINFP">Grado en Ingeniería Informática</option>
+                  <option value="GCMKP">Grado en Ingeniería Mecánica</option>
+                  <option value="GPAUTP">Grado en Ingeniería del Automóvil</option>
+                  <option value="GPDIDP">Grado en Ingeniería en Diseño Industrial y Desarrollo del Producto</option>
+                  <option value="GPARQP">Grado en Fundamentos de la Arquitectura</option>
+                  <option value="GPBAP">Grado en Bellas Artes</option>
+                  <option value="GPINTP">Grado en Diseño de Interiores</option>
+                 <option value="GPDIMC"> Doble Grado en I. Tecnologías Industriales + Ingeniería Mecánica</option>
+                  <option value="GPDMAU">Doble Grado en I. Mecánica + Ingeniería del Automóvil</option>
+                  <option value="GPDDAU">Doble Grado en I. Diseño Industrial y Desarrollo del Producto + I. del Automóvil</option>
+                  <option value="GPDDBA">Doble Grado en I. Diseño Industrial y Desarrollo del Producto + Bellas Artes</option>
+                  <option value="GPDDDI">Doble Grado en I. Diseño Industrial y Desarrollo del Producto + Diseño de Interiores</option>
+                  <option value="GPDARD">Doble Grado en Fundamentos de la Arquitectura + I. Diseño Industrial y Desarrollo del Producto</option>
+                  <option value="GPDABA">Doble Grado en Fundamentos de la Arquitectura + Bellas Artes</option>
+                  <option value="GPDADI">Doble Grado en Fundamentos de la Arquitectura + Diseño de Interiores</option>
+                  
+                  <!--<option value="GPDTIC">Doble Grado en Ingeniería en Tecnologías Industriales + C- ADE - Creación, Administración y Dirección de Empresas</option>-->
+                  </optgroup>
+
+                <!-- Ciencias de la Salud - Centro San Rafael - Nebrija  -->
+                <optgroup label="Ciencias de la Salud" class="opt-facultad">
+                    <option value="GRENFP">Grado en Enfermería</option>
+                      <option value="GRFISP">Grado en Fisioterapia</option>
+                </optgroup>
+              </optgroup>
+
+
+            <!-- POSTGRADOS -->
+                  <optgroup label="POSTGRADOS" class="opt-tipo">
+
+                      <!-- Facultad de Lenguas y Educación -->
+                      <optgroup label="Facultad de Lenguas y Educación" class="opt-facultad">
+                        <option value="MAELES">Máster en Lingüística Aplicada a la Enseñanza del Español como Lengua Extranjera</option>
+                        <option value="MABILS">Máster en Enseñanza Bilingüe</option>
+                        <option value="MAPRFS">Máster en Formación del Profesorado de ESO y Bachillerato, FP y Enseñanza de idiomas</option>
+                        <option value="MADIDP">Máster en Didáctica del Español como Lengua Extranjera</option>
+                        <option value="MATICO">Máster en Tecnologías de la Información y la Comunicación para la Educación y Aprendizaje Digital</option>
+                        <option value="MAIEDO">Máster en Procesos Educativos de Enseñanza y Aprendizaje</option>
+                      </optgroup>
+           
+                      <!-- Facultad de Comunicación y Artes -->
+                      <optgroup label="Facultad de Comunicación y Artes" class="opt-facultad">
+                        <option value="MCPTVP">Máster en Periodismo en Televisión - Antena 3</option>
+                        <option value="MCPDGP">Máster en Periodismo Digital - Antena 3</option>
+                      <option value="MCFICP">Máster en Dirección y Realización de Series de Ficción - Atresmedia</option>
+                      <option value="MCPUBP">Máster en Dirección de Publicidad Integrada - TBWA</option>
+                        <option value="MCMKDO">Máster en Marketing y Publicidad Digital - IAA</option>
+                        <option value="MCPLMP">Máster en Planificación Estratégica de Medios Publicitarios - Carat</option>
+                        <option value="MCRADP">Máster en Radio - Onda Cero (Título propio)</option>
+                        <option value="MCMODP">Máster en Comunicación de Moda y Lujo - vocento- mujerhoy (Título propio)</option>Máster en 
+                        <option value="MCCROP">Máster en Comunicación y Reputación en las Organizaciones - LLORENTE & CUENCA</option>
+                        
+                      </optgroup>
+                  
+                      <!-- Facultad de Ciencias Sociales -->
+                      <optgroup label="Facultad de Ciencias Sociales" class="opt-facultad">
+                       
+                          <option value="MSCREP">Máster en Dirección de Empresas (MBA)</option>
+                          <option value="MSPROP">Máster en Dirección y Organización de Proyectos</option>
+                          <option value="MSRHP">Máster en Liderazgo y Dirección de Recursos Humanos</option>
+                          <option value="MSMKDP">Máster en Dirección Comercial y Marketing Digital</option>
+                          <option value="MSXEP">MBA para estudiantes Executive</option>
+                          <option value="MSCREP">MBA + Título Propio de Experto Nebrija en Creación de Empresas</option>
+                         <option value="MSTECP"> MBA + Título Propio de Experto Nebrija en Gestión de la Tecnología</option>
+                          <option value="MSTALP">MBA para Jóvenes Talentos + Certificados Harvard Business Publishing</option>
+                          <option value="MSABOP">Máster de Acceso a la Abogacía</option>
+                          <option value="MSJURP">Máster en MBA + Título Propio de Experto Nebrija en Jurídico Empresarial y Compliance Legal - Écija</option>
+                          <option value="MSRIP">Máster en Relaciones Internacionales</option>
+                         <option value="MSPRLP"> Máster en Prevención de Riesgos Laborales</option>
+                          <option value="MSSDP">Máster en Seguridad y Defensa</option>
+                          <option value="MSDOPO">Máster en Derecho internacional humanitario, derechos humanos y derecho operacional</option>
+                          <option value="MSRISP">Máster en Gestión de Riesgos en Conflicto</option>
+                          <option value="MSCIBP">Máster en Ciberdelincuencia</option>
+                          <option value="MSTRFO">Máster en Transformación Digital de las Organizaciones</option>
+                          <option value="MSTURP">Máster en MBA + Título Propio de Experto Nebrija en Dirección de Empresas del Turismo</option>
+
+                      </optgroup>
+
+
+                      <!-- Escuela Politécnica Superior -->
+                      <optgroup label="Escuela Politécnica Superior" class="opt-facultad">
+                        <option value="MPINDP">Máster en Ingeniería Industrial</option>
+                        <option value="MPDISP">Máster en Diseño Industrial</option>
+                       <option value="MPENEP">Máster en Energy and Climate Change</option>
+                        <option value="MPARQP">Máster en Arquitectura</option>
+                        <option value="MPGIEP">Máster en Gestión de la Información para la Edificación</option>
+                        
+                        <option value="MPVEHP">Máster en Ingeniería de Vehículos de Competición (Título propio)</option>
+                        <option value="MPPJES">Máster en Peritación Judicial de la Edificación (Título propio)</option>
+                      </optgroup>
+
+                      
+
+                      <!-- Centro Universitario San Rafael de Nebrija ( LP generica-ciencias-salud ) -->
+                      <optgroup label="Centro Universitario San Rafael de Nebrija" class="opt-facultad">
+                        <option value="MRPSIP">Máster en Psicología General Sanitaria</option>
+                        <option value="MRCROP">Máster en Enfermedad Crónica Avanzada y Atención Paliativa</option>
+                        <option value="MRFISP">Máster en Fisioterapia Musculoesquelética Avanzada basada en Razonamiento Clínico</option>
+                        <option value="MROODP">Máster en Ortodoncia y Ortopedia Dentofacial</option>
+                        <option value="MROAP">Máster en Ortodoncia Avanzada</option>
+                        <option value="MROPP">Máster en Odontopediatría</option>
+                      </optgroup>
+           
+                  </optgroup>
+       
+                </select>
+
+
+                <!-- HASTA AQUÍ LLEGA EL COMBO PREDICTIVO -->
+
+                <input type="text" class="input_style" id="at_titulacion_deseada" name="observaciones" placeholder="Comentario" style="display: none;">
+
+
+
+                     <div class="checkbox">
+                        <input type="checkbox" id="aviso_legal" name="aviso_legal" value="1">
+                        <label class="aviso_legalText"> He leído y acepto la <a class="fancybox_legal fancybox.iframe politica aviso_legalText_link" href="aviso_legal.html" >política de privacidad</a>. </label>
+                     </div>
+                     <span class="obligatorios"> *Campos obligatorios </span>
+                     <div class="form-group">
+                        <button type="submit" class="boton_form" id="sendForm"> ¡Infórmate ya! </button>
+                        <span id="error_msg" style="display: none;" class="error_msg"> Por favor, completa todos los campos correctamente.</span>
+                     </div>
+                  </form>
+               </div>
+         
+         </div>
+          
+     
+      </div>
+      <div class="container ">
+         <div class="col-xs-12 col-sm-7 col-md-8 subtitulo">
+            <!--<h3 class="hidden-xs">Programas 100% online y semipresenciales </h3>-->
+            <h2 class="hidden-xs">El Contrato Nebrija – Universidad, Empresas y tú, unidos<br> para convertirte en el profesional mejor preparado.</h2>
+            <div class="extras">
+         <div class="row">
+         <div class="col-md-6" id="at_container_puertas_abiertas">
+         
+         
+             <!-- Pastilla automática json
+                 
+                 <div class="pastilla puertas-abiertas" id="at_puertas_abiertas" style="display: none;">
+                  <p id="at_puertas_abiertas_paragraph">Jornada de Puertas Abiertas en el Campus de Princesa <strong id="at_puertas_abiertas_fecha"></strong>. <strong class="red_text"> ¡Ven a vernos!</strong></p>
+         </div>
+         
+         -->
+         
+         
+          <div class="pastilla puertas-abiertas" id="at_puertas_abiertas" style="display: none;">
+                  <p id="at_puertas_abiertas_paragraph">Jornada de Puertas Abiertas en el Campus de Princesa <strong id="at_puertas_abiertas_fecha"></strong>. <strong class="red_text"> ¡Última Jornada!</strong></p>
+         </div>
+         
+         
+         
+         </div>
+         
+         <div class="col-md-6" id="at_container_descuento">
+         <div class="pastilla descuento" id="at_descuento" style="display: none;">
+                        <p id="at_descuento_paragraph"><strong class="red_text" id="at_descuento_cifra"></strong>hasta el <strong id="at_descuento_fecha"></strong>.<br> </p>
+                     </div>
+         </div>
+         </div>
+         <p class="convalidaciones" id="at_convalidaciones" style="display: none;">Lorem ipsum dolor sit amet, consectetur adipiscing sede do <strong class="red_text">eiusmod tempor em</strong>. <a class="btn btn-default red" title="" href="#">Convalidaciones</a></p>
+            </div>
+         </div>
+      </div>
+      </div>
+      <!--Comienzo pastillas-->
+      <div class="row">
+         <div class="container iconos_home">
+		 <div class="row">
+            <div class="col-md-4 col-sm-4 ">
+               <img class="ico-pildoras" src="img/birrete.png" alt="sector en auge">
+               <h3 class="red_text"><strong>Enseñanza personalizada</strong></h3>
+               <p>Nuestra exigencia académica y el número reducido de alumnos por clases garantizan el esfuerzo del alumno y su seguimiento personal para la consecución de los objetivos académicos, profesionales y de desarrollo personal.
+</p>
+            </div>
+            <div class="col-md-4 col-sm-4 ">
+               <img class="ico-pildoras" src="img/partner.png" alt="Icono nuevas profesiones">
+               <h3 class="red_text"><strong>La mejor elección</strong>
+</h3>
+               <p>Nebrija es la 2º universidad española en empleabilidad, según U-Ranking; y está entre las 6 mejores universidades privadas de España, según la Fundación CyD.
+
+</p>
+            </div>
+            <div class="col-md-4 col-sm-4 ">
+               <img class="ico-pildoras" src="img/nuevas-profesiones.png" alt="Icono partner exclusivo">
+               <h3 class="red_text"><strong>Innovación multidisciplinar</strong></h3>
+               <p>A los grados y postgrados tradicionales, Nebrija siempre ha sumado innovadores programas multidisciplinares que combinan conocimientos de humanidades con capacidades técnicas y tecnológicas. Estos programas exclusivos permiten adquirir un perfil profesional único. 
+ 
+</p>
+            </div>
+		</div>
+          
+		   <div class="row">
+		   <div class="col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-2 ">
+               <img class="ico-pildoras" src="img/campus.png" alt="Icono birrete">
+               <h3 class="red_text"><strong>Campus Urbano</strong></h3>
+               <p> La Universidad Nebrija tiene un nuevo campus en el centro de Madrid donde conviven día a día estudiantes de más de 30 nacionalidades de los cinco continentes. Su privilegiada situación es un acercamiento a la cultura, a las empresas y a varias actividades profesionales.</p>
+            </div>
+            <div class="col-md-4 col-sm-4 ">
+               <img class="ico-pildoras" src="img/internacional.png" alt="Icono birrete">
+               <h3 class="red_text"><strong>Universidades extranjeras</strong></h3>
+               <p>Conscientes de la importancia de adquirir experiencia internacional y visión global, Nebrija mantiene acuerdos de colaboración con 80 universidades del mundo. Los estudiantes pueden elegir cursar sus últimos años de carrera sin mayor coste que la manutención en el país elegido.
+</p>
+            </div>
+			</div>
+			
+         </div>
+      </div>
+      <!--Ficha Tecnica-->
+     <!-- <div class="container-fluid bg_gris">
+         <div class="container">
+            <div class="row">
+               
+               <div class="caja titulo_ficha">
+                  Ficha Técnica
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-4 col-sm-4 titulo_ficha text-center">
+                  <strong>MODALIDAD:</strong><br> Online
+               </div>
+               <div class="col-md-4 col-sm-4 titulo_ficha text-center">
+                  <strong>INICIO: </strong><br>Abril 2017
+               </div>
+               <div class="col-md-4 col-sm-4 titulo_ficha text-center">
+                  <strong>TIPO DE TITULACIÓN:</strong><br> Máster Universitario
+               </div>
+            </div>
+         </div>
+      </div>-->
+      <!--Testimoniales-->
+      <div class="testimonials container padding_0">
+         <div class="row">
+            <div >
+               <div class="foto foto1 col-md-2  col-sm-2">
+                  <!--<img class="foto" src="img/foto_1.jpg">-->
+               </div>
+               <div class="col-md-3 col-sm-4">
+                  <div class="titu_testimonial primary_color">
+                    Elena Sanz Vivanco
+                  </div>
+                  <p class="sub_testimonial">
+                   Alumna Doble Grado Publicidad  y RRPP y Marketing
+                  </p>
+                  <div class="texto_testimonial">
+                     “Las clases prácticas, los grupos reducidos, la cercanía de los profesores o el inmejorable ambiente hace que cada día llegue a la Universidad con ilusión y ganas de aprender”.
+                  </div>
+               </div>
+            </div>
+            <div class=" barra_red2 primary_color_bg">
+               <div class="foto foto2 col-md-2 col-md-offset-1 col-sm-2">
+                  <!--<img  src="img/foto_2.jpg">-->
+               </div>
+               <div class="col-md-3 col-sm-4">
+                  <div class="titu_testimonial primary_color">
+                      Fernando Tomé
+                  </div>
+                  <p class="sub_testimonial">
+                    Decano de la Facultad de Ciencias Sociales
+                  </p>
+                  <div class="texto_testimonial">
+                     “Trabajamos contigo para que cumplas tu deseo de convertirte en un profesional internacional, con capacidad de emprender”.
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- PLAN DE ESTUDIOS-->
+      <div class="container espacio2">
+        <div class="row">
+            <div class="col-md-12 text-center primary_color plan">
+                OFERTA ACADÉMICA
+            </div>
+
+            <h3 class="text-center">Grados</h3>
+        </div>
+          <div class="row">
+            <div class="col-md-6">
+               <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <button class="panel-heading accordion-toggle" data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne">
+                             <h4 class="panel-title ">Facultad de Lenguas y Educación</h4>
+
+                        </button>
+                        <div id="collapseOne" class="panel-collapse collapse in">
+                            <div class="panel-body"> 
+                            <ul>
+                                <li><span class="gris">Lenguas Modernas - Inglés</span>
+                                </li>
+                                <li><span class="gris">Educación Infantil</span>
+                                </li>
+                                <li><span class="gris">Educación Primaria</span>
+                                </li>                              
+
+                                
+                               
+                                </li>
+
+                                <li><span class="gris">Lingüística Aplicada y Ciencias del Lenguaje</span>
+                                </li>
+                                 <!--<li><span class="gris">Ciencias de la Actividad Física y del Deporte</span>
+                                </li>-->
+
+                            </ul>
+
+                            <ul> <p>Dobles titulaciones oficiales</p>
+                                <li><span class="gris">Educación Primaria + Educación Infantil
+</span></li>
+                                <li><span class="gris">Educación Primaria + Lenguas Modernas</span></li>
+                                <li><span class="gris">Ciencias de la Actividad Física y del Deporte + Educación Primaria</span></li>
+
+                             
+                            </ul>
+              <br>
+                            
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="panel panel-default">
+                        <button class="panel-heading accordion-toggle" data-toggle="collapse" data-parent="#accordion" data-target="#collapseThree">
+                             <h4 class="panel-title">Facultad de Comunicación y Artes</h4>
+
+                        </button>
+                        <div id="collapseThree" class="panel-collapse collapse in">
+                            <div class="panel-body"> 
+                            <ul>
+                                
+                            
+                                <li><span class="gris">Periodismo + Diploma en Comunicación Digital</span></li>
+<li><span class="gris">Comunicación Audiovisual + Diploma en Comunicación Digital</span></li>
+<li><span class="gris">Publicidad y Relaciones Públicas + Diploma en Comunicación Digital</span></li>
+<li><span class="gris">Marketing + Diploma en Comunicación Digital</span></li>
+<li><span class="gris">Comunicación Corporativa, Protocolo y Organización de Eventos + Diploma en Comunicación Digital</span></li>
+<li><span class="gris">Artes Escénicas</span></li>
+<li><span class="gris">Diseño Digital y Multimedia</span></li>
+<li><span class="gris">Grado de diseño de moda</span></li>
+ <li><span class="gris">Bellas Artes</span></li>
+
+</ul>
+ <ul> <p>Dobles titulaciones oficiales</p>
+<li><span class="gris">Periodismo + Comunicación Audiovisual</span></li>
+<li><span class="gris">Periodismo + Relaciones Internacionales</span></li>
+<li><span class="gris">Comunicación Audiovisual + Publicidad y Relaciones Públicas</span></li>
+<li><span class="gris">Publicidad y Relaciones Públicas + Marketing</span></li>
+<li><span class="gris">Publicidad y Relaciones Públicas + Comunicación Corporativa, Protocolo y Organización de Eventos</span></li>
+<li><span class="gris">Artes Escénicas + Comunicación Audiovisual</span></li>
+<li><span class="gris">Publicidad y Relaciones Públicas + Diseño Digital y Multimedia</span></li>
+<li><span class="gris">Doble Grado en Bellas Artes + Diseño de Interiores</span></li>
+
+                             
+                            </ul>
+                           
+                          
+                            
+                            </div>
+                        </div>
+                    </div>
+          
+            
+      
+                    <div class="panel panel-default">
+                        <button class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" data-target="#collapseTwo">
+                             <h4 class="panel-title">Facultad de Ciencias Sociales</h4>
+
+                        </button>
+                        <div id="collapseTwo" class="panel-collapse collapse in">
+                            <div class="panel-body"> 
+                             <ul> <p>Área de Empresa</p>
+                                <li><span class="gris">C-ADE - Creación, Administración y Dirección de Empresas</span>
+                                </li>
+                                <li><span class="gris">Psicología</span>
+                                </li>
+                                <li><span class="gris">Economía y Negocios Internacionales</span>
+                                </li>
+                                
+                            </ul>
+                            
+                             <ul> <p>Escuela de derecho y relaciones internacionales</p>
+                             
+                                <li><span class="gris">Derecho</span>
+                                </li>
+                                <li><span class="gris">Relaciones Internacionales</span>
+                                </li>
+                                <li><span class="gris">Seguridad</span>
+                                </li>
+                            </ul>
+                            
+                            <ul> <p>Escuela de turismo</p>
+                             
+                                <li><span class="gris">Turismo</span>
+                                </li>
+                            </ul>
+                            
+                            
+                            <ul> <p>Dobles titulaciones oficiales</p>
+                             
+                                
+ <li><span class="gris">C-ADE - Creación, Administración y Dirección de Empresas + Relaciones Internacionales</span></li>
+ <li><span class="gris">C-ADE - Creación, Administración y Dirección de Empresas + Marketing</span></li>
+ <li><span class="gris">C-ADE - Creación, Administración y Dirección de Empresas + Turismo</span></li>
+ <li><span class="gris">Turismo + Marketing</span></li>
+ <li><span class="gris">Derecho + Relaciones Internacionales</span></li>
+ <li><span class="gris">Derecho + C-ADE- Creación, Administración y Dirección de Empresas</span></li>
+ <li><span class="gris">Derecho + Seguridad</span></li>
+ <li><span class="gris">Relaciones Internacionales + Turismo</span></li>
+ <li><span class="gris">Relaciones Internacionales + Seguridad</span></li>
+ <li><span class="gris">Relaciones Internacionales + Comunicación Corporativa, Protocolo y Organización de Eventos</span></li>
+
+
+                               
+                            </ul>
+                            
+                            
+                 <br>
+                            
+                          </div>
+                        </div>
+                    </div>
+                   
+                   
+                </div>
+            </div>
+   
+       
+            
+            <div class="col-md-6">
+                <div class="panel-group" id="accordion2">
+                    <div class="panel panel-default">
+                        <button class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" data-target="#collapseFour">
+                             <h4 class="panel-title">Escuela Politécnica Superior</h4>
+
+                        </button>
+                        <div id="collapseFour" class="panel-collapse collapse in">
+                            <div class="panel-body"> 
+                            <ul>
+                                <li><span class="gris">Ingeniería en Tecnologías Industriales + MU en Ingeniería Industrial</span>
+                                </li>
+                               
+ <li><span class="gris">Ingeniería Informática</span></li>
+ <li><span class="gris">Ingeniería Mecánica</span></li>
+ <li><span class="gris">Ingeniería del Automóvil</span></li>
+ <li><span class="gris">Ingeniería en Diseño Industrial y Desarrollo del Producto</span></li>
+ <li><span class="gris">Fundamentos de la Arquitectura + MU en Arquitectura</span></li>
+ <li><span class="gris">Diseño de Interiores</span></li>
+
+                            </ul>
+                            
+                            
+                             <ul><p>Dobles titulaciones oficiales</p>
+                             
+                                <li><span class="gris">I. Tecnologías Industriales + Ingeniería Mecánica</span>
+                                </li>
+                                <li><span class="gris">I. Mecánica + Ingeniería del Automóvil</span>
+                                </li>
+                                <li><span class="gris">I. Diseño Industrial y Desarrollo del Producto + I. del Automóvil</span></li>
+                                
+                                <li><span class="gris">I. Diseño Industrial y Desarrollo del Producto + Bellas Artes</span>
+                                </li>
+                                <li><span class="gris">I. Diseño Industrial y Desarrollo del Producto + Diseño de Interiores</span>
+                                </li>
+                                <li><span class="gris">Fundamentos de la Arquitectura + I. Diseño Industrial y Desarrollo del Producto</span>
+                                </li>
+                                <li><span class="gris">Fundamentos de la Arquitectura + Bellas Artes</span>
+                                </li>
+                                <li><span class="gris">Fundamentos de la Arquitectura + Diseño de Interiores</span>
+                                </li>
+                                
+                                 <!--<li><span class="gris">Ingeniería en Tecnologías Industriales + C-ADE - Creación, Administración y Dirección de Empresas</span></li>-->
+                                
+                                
+                               
+                            </ul>
+                           
+                             <!--<span class="asterisco gris">* Titulación pendiente de verificación por Fundación Madri+d.</span><br>-->
+                                 
+                          </div>
+                        </div>
+                       
+                    </div>
+                    
+                    <div class="panel panel-default">
+                        <button class="panel-heading accordion-toggle" data-toggle="collapse" data-parent="#accordion" data-target="#collapseFive">
+                             <h4 class="panel-title">Ciencias de la Salud - Centro San Rafael - Nebrija</h4>
+
+                        </button>
+                        <div id="collapseFive" class="panel-collapse collapse in">
+                            <div class="panel-body"> 
+                            <ul>
+                                <li><span class="gris">Enfermería </span>
+                                </li>
+                                <li><span class="gris">Fisioterapia</span>
+                                </li>
+                               
+                            </ul>
+                            
+                             
+                            
+                            </div>
+                        </div>
+                    </div>
+                       
+                    <!-------fin accordion -------->
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+          <h3 class="text-center"> Postgrados</h3>
+
+        <div class="row">
+            <div class="col-md-6">
+               <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <button class="panel-heading accordion-toggle" data-toggle="collapse" data-parent="#accordion" data-target="#collapseSix">
+                             <h4 class="panel-title ">Facultad de Lenguas y Educación</h4>
+
+                        </button>
+                        <div id="collapseSix" class="panel-collapse collapse in">
+                            <div class="panel-body"> 
+                            <ul>
+                                <li><span class="gris">Lingüística Aplicada a la Enseñanza del Español como Lengua Extranjera</span></li>
+                                 <li><span class="gris">Enseñanza Bilingüe</span></li>
+                                 <li><span class="gris">Formación del Profesorado de ESO y Bachillerato, FP y Enseñanza de idiomas</span></li>
+                                 <li><span class="gris">Didáctica del Español como Lengua Extranjera</span></li>
+                                 <li><span class="gris">Tecnologías de la Información y la Comunicación para la Educación y Aprendizaje Digital</span></li>
+                                 <li><span class="gris">Procesos Educativos de Enseñanza y Aprendizaje</span></li>
+                                  <li><span class="gris">Máster en Mercado del Arte y Gestión de Empresas Relacionadas</span>
+                                </li>
+
+
+                             
+                            </ul>
+                           
+                            
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="panel panel-default">
+                        <button class="panel-heading accordion-toggle" data-toggle="collapse" data-parent="#accordion" data-target="#collapseSeven">
+                             <h4 class="panel-title">Facultad de Comunicación y Artes</h4>
+
+                        </button>
+                        <div id="collapseSeven" class="panel-collapse collapse in">
+                            <div class="panel-body"> 
+                            <ul>
+                            <li><span class="gris">Periodismo en Televisión - Antena 3</span></li>
+                            <li><span class="gris">Periodismo Digital - Antena 3</span></li>
+                            <li><span class="gris">Dirección y Realización de Series de Ficción - Atresmedia</span></li>
+                            <li><span class="gris">Dirección de Publicidad Integrada - TBWA</span></li>
+                            <li><span class="gris">Marketing y Publicidad Digital - IAA</span></li>
+                            <li><span class="gris">Planificación Estratégica de Medios Publicitarios - Carat</span></li>
+                            <li><span class="gris">Radio - Onda Cero (Título propio)</span></li>
+                            <li><span class="gris">Comunicación de Moda y Lujo - vocento- mujerhoy (Título propio)</span></li>
+                            <li><span class="gris">Comunicación y Reputación en las Organizaciones - LLORENTE & CUENCA (Título propio)</span></li>
+                            <!--<li><span class="gris">Máster de Mercados del arte</span></li> -->
+
+            
+                            </ul>                            
+                            </div>
+                        </div>
+                    </div>
+          
+            
+      
+                    <div class="panel panel-default">
+                        <button class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" data-target="#collapseEight">
+                             <h4 class="panel-title">Facultad de Ciencias Sociales</h4>
+
+                        </button>
+                        <div id="collapseEight" class="panel-collapse collapse in">
+                            <div class="panel-body"> 
+                             <ul> <p>Área de Empresa</p>
+                              <p>MBA</p>
+                                <li><span class="gris">Máster Universitario en Dirección de Empresas (MBA)</span>
+                                </li><p></p>
+
+                               <li><span class="gris">Dirección y Organización de Proyectos</span></li>
+                               <li><span class="gris">Liderazgo y Dirección de Recursos Humanos</span></li>
+                               <li><span class="gris">Dirección Comercial y Marketing Digital</span></li>
+                               <li><span class="gris">MBA para estudiantes Executive</span></li>
+                               <li><span class="gris">MBA + Título Propio de Experto Nebrija en Creación de Empresas</span></li>
+                               <li><span class="gris">MBA + Título Propio de Experto Nebrija en Gestión de la Tecnología</span></li>
+                               <li><span class="gris">MBA para Jóvenes Talentos + Certificados Harvard Business Publishing</span></li>
+
+
+
+                             
+
+                             </ul>
+                              
+                            
+                             <ul> <p>Escuela de derecho y relaciones internacionales</p>
+                             
+                                <li><span class="gris">Acceso a la Abogacía</span></li>
+                                <li><span class="gris">MBA + Título Propio de Experto Nebrija en Jurídico Empresarial y Compliance Legal - Écija</span></li>
+                                <li><span class="gris">Relaciones Internacionales</span></li>
+                                <li><span class="gris">Prevención de Riesgos Laborales</span></li>
+                                <li><span class="gris">Seguridad y Defensa</span></li>
+                                <li><span class="gris">Derecho internacional humanitario, derechos humanos y derecho operacional</span></li>
+                                <li><span class="gris">Gestión de Riesgos en Conflicto</span></li>
+                                <li><span class="gris">Ciberdelincuencia *</span></li>
+                                <li><span class="gris">Transformacion Digital de las Organizaciones</span></li>
+
+                                </li>
+                            </ul>
+                            
+                            <ul> <p>Escuela Internacional de Estudios Turísticos</p>
+                             
+                                <li><span class="gris">MBA + Título Propio de Experto Nebrija en Dirección de Empresas del Turismo</span><br><br>
+                                </li>
+                            </ul>
+                            
+                             <!--<span class="asterisco gris">* Titulación pendiente de verificación por Fundación Madri+d.</span><br>-->
+                       
+                          </div>
+                        </div>
+                    </div>
+                   
+                   
+                </div>
+            </div>
+   
+       
+            
+            <div class="col-md-6">
+                <div class="panel-group" id="accordion2">
+                    <div class="panel panel-default">
+                        <button class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" data-target="#collapseNine">
+                             <h4 class="panel-title">Escuela Politécnica Superior</h4>
+
+                        </button>
+                        <div id="collapseNine" class="panel-collapse collapse in">
+                            <div class="panel-body"> 
+                            <ul>
+                                <li><span class="gris">Ingeniería Industrial</span></li>
+                                <li><span class="gris">Diseño Industrial</span></li>
+                                <li><span class="gris">Energy and Climate Change</span></li>
+                                <li><span class="gris">Arquitectura</span></li>
+                                <li><span class="gris">Ingeniería de Vehículos de Competición (Título propio)</span></li>
+                                <li><span class="gris">Gestión de la Información para la Edificación (Título propio)</span></li>
+
+                            </ul>
+                            
+                            
+                             
+                           
+                             <!--<span class="asterisco gris">* Titulación pendiente de verificación por Fundación Madri+d.</span>-->
+                                 
+                          </div>
+                        </div>
+                       
+                    </div>
+                    
+                    <div class="panel panel-default">
+                        <button class="panel-heading accordion-toggle" data-toggle="collapse" data-parent="#accordion" data-target="#collapseTen">
+                             <h4 class="panel-title">Ciencias de la Salud - Centro San Rafael - Nebrija</h4>
+
+                        </button>
+                        <div id="collapseTen" class="panel-collapse collapse in">
+                            <div class="panel-body"> 
+                            <ul>
+                                <li><span class="gris">Psicología General Sanitaria</span></li>
+                                 <li><span class="gris">Enfermedad Crónica Avanzada y Atención Paliativa</span></li>
+                                 <li><span class="gris">Fisioterapia Musculoesquelética Avanzada basada en Razonamiento Clínico</span></li>
+                                 <li><span class="gris">Ortodoncia y Ortopedia Dentofacial</span></li>
+                                 <li><span class="gris">Ortodoncia Avanzada</span></li>
+                                 <li><span class="gris">Odontopediatría</span></li>
+
+                               
+                            </ul>
+                            
+                          
+                            
+                            </div>
+                        </div>
+                    </div>
+                       
+                    <!-------fin accordion -------->
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+      <!--titulaciones relacionadas-->
+     <!-- <div class="container-fluid titulaciones-relacionadas">
+         <div class="row">
+            <h3 class="text-center">TITULACIONES RELACIONADAS</h3>
+            <div class="container">
+               <div class="titulacion col-md-offset-2 col-md-4 col-sm-4 col-sm-offset-2">
+                  <h4 class="text-center">Máster Universitario</h4>
+                  <p>Dirección de Publicidad Integrada - TBWA</p>
+               </div>
+               <div class="titulacion col-md-4 col-sm-4">
+                  <h4 class="text-center">Máster Universitario</h4>
+                  <p>Planificación Estratégica de Medios Publicitarios - Carat</p>
+               </div>
+			   
+               <div class="titulacion col-md-4 col-sm-12  no-border">
+                  <h4 class="text-center">Doble Grado </h4>
+                  <p>C-ADE - Creación, Administración 
+                  y Dirección de Empresas + Relaciones
+                  Internacionales</p>
+               </div>
+			   
+            </div>
+         </div>
+      </div>-->
+      <!--Datos nebrija-->
+      <div class="container lineas">
+         <div class="row">
+            <div class="col-md-3 col-sm-3 texto2 text-center alineado_ipad">
+               <span class="destacado_datos primary_color">+3.500</span>
+               <br> empresas
+               <br>
+               <strong>colaboran con Nebrija</strong>
+            </div>
+            <div class="col-md-3 col-sm-3 texto2 text-center alineado_ipad">
+               <span class="destacado_datos primary_color">+7.300</span>
+               <br> alumnos formándose en
+               <br>
+               <strong>la Universidad Nebrija </strong>
+            </div>
+            <div class="col-md-3 col-sm-3 texto2 text-center alineado_ipad">
+               <span class="destacado_datos primary_color"> 2ª</span>
+               <br> Universidad
+               <br> en <strong>Empleabilidad</strong>
+            </div>
+            <div class="col-md-3 col-sm-3 texto2 text-center alineado_ipad">
+               <span class="destacado_datos primary_color">1ª</span>
+               <br> Universidad
+               <br>en<strong> Docencia</strong>
+            </div>
+         </div>
+      </div>
+      <div class="container lineas" id="div_video" style="display: none;">
+         <div class="col-md-6 text-center">
+		 <iframe width="100%" height="315" id="at_video" src="" frameborder="0" allowfullscreen></iframe>
+         </div>
+         <div class="col-md-6">
+            <h2 class="separacion-video">Bienvenido a la Universidad<br> Bienvenido a Nebrija</h2>
+            <p class="separacion-video">
+               La Universidad Nebrija mantiene desde su creación los valores diferenciadores de su modelo educativo, basados en la exigencia académica y la enseñanza personalizada, la incorporación de las mejores empresas en la formación práctica, la innovación académica en diferentes áreas, la estancia y experiencia en universidades internacionales y sobre todo, la combinación de todos estos valores en el Campus urbano internacional Madrid – Princesa.
+            </p>
+         </div>
+      </div>
+      <!--Propuesta Futuro-->
+     <div class="container_fluid bg_gris ">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-2 col-md-offset-2 propuesta secondary_color propuesta_min"><img src="img/contrato_nebrija.png" alt="contrato nebrija"></div>
+               <div class="col-md-6 texto2 propuesta_min2">
+                  "<strong>El Contrato Nebrija</strong>” es un compromiso a tres partes entre la Universidad
+                  <br> Nebrija, nuestros alumnos y las mejores empresas e instituciones. El mundo
+                  <br> laboral está presente en todos nuestros planes de estudio.
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="container">
+         <div class="row">
+            <div class="col-md-5  conocenos">
+               <h3>¡VEN A CONOCERNOS!</h3>
+               <a class="secondary_color" href="https://goo.gl/maps/rZYB6zAEJZ42" target="_blank">Santa Cruz de Marcenado, 27 - 28015 Madrid</a>
+               <br>
+            </div>
+            <div class="col-md-6  logo_footer ancho_columna">
+               <img src="img/logo_nebrija.png" alt="Logo Nebrija">
+            </div>
+         </div>
+      </div>
+      <p class="text-center"><strong>**Condiciones del descuento: 15% de descuento en la mensualidad durante el mes de junio, al formalizar el pago de la reserva de plaza en los 5 días siguientes de realizar las pruebas de admisión.
+</strong></p>
+      <div class="container-fluid footer">
+         © Nebrija Universidad
+      </div>
+      </div>
+      <script src="js/jquery-1.11.3.min.js"></script> 
+
+      <script src="select2-combo-predictivo/select2.full.min.js"></script>
+      <script src="select2-combo-predictivo/select-titulaciones.js"></script>
+
+
+      <script src="js/bootstrap.js"></script>
+      <script src="js/bootstrap-select.js"></script>
+      <script src="js/icheck.js?v=1.0.2"></script>
+      <link rel="stylesheet" type="text/css" href="js/fancybox/jquery.fancybox.css" media="screen" />
+      <script src="js/fancybox/jquery.fancybox.js"></script>
+
+      <!-- -************************************************- -->
+	<script src="http://www.nebrija.com/lp/2017/inc/main-controller.js"></script>
+      <!--<script src="http://dev.gobalo.es/nebrija_landings/lp/2017/inc/main-controller.js"></script>-->
+      <!-- -************************************************- -->
+      <link href="_include/css/fonts.css" rel="stylesheet">
+      <script src="js/modernizr.custom.js"></script>
+      <script>
+         $(document).ready(function() {
+             $(".fancybox").fancybox({
+                 maxWidth: 320,
+                 maxHeight: 360,
+                 width: '90%',
+                 height: '90%',
+                 autoSize: false,
+                 closeClick: false,
+                 openEffect: 'none',
+                 closeEffect: 'none'
+             });
+         
+             $(".fancybox_legal").fancybox({
+                 autoSize: true,
+                 closeClick: false,
+                 openEffect: 'none',
+                 closeEffect: 'none'
+             });
+
+             $('#pais').selectpicker();
+             $('#provincia').selectpicker('hide');
+           // $('#at_combo_titulaciones').selectpicker('hide');
+         });
+      </script>
+      <script>
+         $(document).ready(function(){
+           $('#aviso_legal').iCheck({
+             checkboxClass: 'icheckbox_square-grey',
+             radioClass: 'iradio_square-grey',
+             increaseArea: '20%' // optional
+           });
+         });
+      </script>
+      <script type="text/javascript">
+         $('.collapse').collapse()
+      </script>
+    <script>
+  $(document).ready(function() {
+
+  	
+    $('.header-fixed').hide();
+      $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+        if (scroll >= 600) {
+          $('.header_form').fadeIn();
+        }else{
+          $('.header_form').fadeOut();
+        }
+      });
+  });
+</script>
+</body>
+
+
+</html>
